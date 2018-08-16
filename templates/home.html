@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+        }
+
+        header {
+            padding: 20px 0;
+        }
+
+        header .row,
+        footer .row {
+            display: flex;
+            align-items: center;
+        }
+
+        header h1 {
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .jumbotron {
+            display: flex;
+            align-items: center;
+            background-image: url('../static/jamie-goodwin-411634-unsplash.jpg');
+            background-size: cover;
+            color: #ffffff;
+            height: 500px;
+            text-shadow: 0.25px 0.25px 0.25px #000000;
+        }
+
+        .jumbotron h2 {
+            font-size: 60px;
+            font-weight: 700;
+            margin: 0;
+            color: #fff;
+        }
+
+        .jumbotron h3 {
+            margin: 0 0 20px;
+            color: #fff;
+        }
+
+        section .row img {
+            margin: 0 0 30px;
+            align-items: center;
+            width: 400px;
+            height: 250px;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+        }
+
+        .col-sm-6:hover .overlay {
+            opacity: 1;
+        }
+
+        .col-md-6 {
+            margin: 0 0 30px;
+        }
+
+        .btn.btn-primary {
+            border-radius: 2px;
+            border: 0px;
+            color: #fbd1d5;
+            text-shadow: none;
+            background-color: #ffffff;
+        }
+
+        .btn.btn-primary:hover {
+            color: #ffffff;
+            background-color: #fbd1d5;
+        }
+
+        .btn-secondary {
+            background-color: #E8DFE0;
+            color: #ffffff;
+            margin: 0 0 30px;
+        }
+
+        footer {
+            font-size: 12px;
+            padding: 20px 0;
+        }
+
+        footer .col-sm-8 {
+            display: flex;
+            justify-content: flex;
+        }
+
+        footer .col-sm-5 {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        footer li p {
+            margin: 0 0 3px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li img {
+            width: 32px;
+            height: 32px;
+        }
+
+    </style>
+    <title>임실치즈마을 충주체험장</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+    <!--        <link rel="stylesheet" type="text/css" href="main.css"> -->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />-->
+</head>
+
+<body>
+    <header class="container">
+        <div class="row">
+            <h1 class="col-sm-8">임실치즈마을 충주체험장</h1>
+            <nav class="col-sm-5">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/intro">치즈마을소개</a>
+                        <!--인사말 + 오시는 길-->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/experience">프로그램안내</a>
+                        <!--우유 스트링치즈 만들기, 피자만들기, 수제돈까스&스파게티 점심식사, 염소&토끼 먹이주기, 풀썰매타기, 뻥튀기체험, 전통놀이-->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">CONTACT</a>
+                        <!--연락처 + 오시는 길-->
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="jumbotron">
+        <div class="container">
+            <div class="row text-center">
+                <h2>Handmade Experiece</h2>
+                <h3>most Valueable Experience</h3>
+                <!--<a class="btn btn-primary" href="#">See all</a>-->
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <p>치즈 만들기</p>
+                <img src="{{url_for('static', filename='string_cheese_1.jpg')}}" />
+                <div class="overlay">
+                    <img src="{{url_for('static', filename='string_cheese_2.jpg')}}" />
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <p>피자 만들기</p>
+                <img src="{{url_for('static', filename='pizza_2.jpg')}}">
+                <div class="overlay">
+                    <img src="{{url_for('static', filename='pizza_3.jpg')}}" />
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <p>뻥튀기 체험</p>
+                <img src="{{url_for('static', filename='boom.jpg')}}">
+            </div>
+            <div class="col-sm-6">
+                <p>염소/토끼 먹이주기</p>
+                <img src="{{url_for('static', filename='goat.jpg')}}">
+                <div class="overlay">
+                    <img src="{{url_for('static', filename='rabbit.jpg')}}" />
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <p>풀썰매타기</p>
+                <img src="{{url_for('static', filename='slide_1.jpg')}}">
+                <div class="overlay">
+                    <img src="{{url_for('static', filename='slide_2.jpg')}}" />
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <p>전통놀이</p>
+                <img src="{{url_for('static', filename='play_1.jpg')}}">
+                <div class="overlay">
+                    <img src="{{url_for('static', filename='play_2.jpg')}}" />
+                </div>
+            </div>
+        </div>
+        <!--<div class="row text-center">
+            <a class="btn btn-secondary" href="#">View Complete Catalogue</a>
+            </div>-->
+    </section>
+    <footer class="container">
+        <div class="row">
+            <ul class="col-sm-8">
+                <li>
+                    <p><strong>임실치즈마을 충주체험장</strong></p>
+                    <p>체험장 주소: 충북 충주시 엄정면 족동1길 18-1</p>
+                    <p>문의번호: 010-9700-4012</p>
+                    <p>© 2018 DaMacho</p>
+                </li>
+            </ul>
+            <ul class="col-sm-5">
+                <li class="col-sm-1">
+                    <img src="https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-4/instagram.svg">
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
